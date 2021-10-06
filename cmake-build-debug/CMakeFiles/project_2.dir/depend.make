@@ -62,8 +62,11 @@ CMakeFiles/project_2.dir/MultiplyAutomaton.cpp.o: \
  ../MultiplyAutomaton.h \
  ../Token.h
 CMakeFiles/project_2.dir/Parser.cpp.o: \
+ ../Automaton.h \
+ ../Lexer.h \
  ../Parser.cpp \
- ../Parser.h
+ ../Parser.h \
+ ../Token.h
 CMakeFiles/project_2.dir/PeriodAutomaton.cpp.o: \
  ../Automaton.h \
  ../PeriodAutomaton.cpp \

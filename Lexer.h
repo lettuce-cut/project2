@@ -20,6 +20,7 @@ public:
 
     std::vector<Token*> Run(std::string& input);
     static std::vector<std::string> toString(std::vector<Token*> tokens) ;
+    std::vector<Token*> getTokens(std::string& input);
     
     // TODO: add other public methods here
 

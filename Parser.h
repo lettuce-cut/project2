@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <iostream>
+#include "Lexer.h"
 class Parser {
 private:
     void datalogProgramParse();
@@ -25,7 +26,7 @@ public:
     Parser();
     ~Parser();
 
-    void parseRun();
+    void parseRun(std::vector<Token*>);
 };
 
 

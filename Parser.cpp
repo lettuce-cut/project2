@@ -4,7 +4,8 @@
 
 #include "Parser.h"
 
-void Parser::parseRun() {
+
+void Parser::parseRun(std::vector<Token*>) {
     std::cout << std::endl << "In parser" << std::endl;
 }
 
