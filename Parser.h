@@ -26,7 +26,7 @@ public:
     Parser();
     ~Parser();
 
-    void parseRun(std::vector<Token*>);
+    void parseRun(std::vector<Token*> toParse);
 };
 
 

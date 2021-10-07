@@ -14,10 +14,6 @@ iostream
 utility
 -
 
-/Users/roliasong/Desktop/cs236/project_2/Lexer.cpp
-Lexer.h
-/Users/roliasong/Desktop/cs236/project_2/Lexer.h
-
 /Users/roliasong/Desktop/cs236/project_2/Lexer.h
 vector
 -
@@ -25,10 +21,6 @@ Automaton.h
 /Users/roliasong/Desktop/cs236/project_2/Automaton.h
 Token.h
 /Users/roliasong/Desktop/cs236/project_2/Token.h
-
-/Users/roliasong/Desktop/cs236/project_2/Parser.cpp
-Parser.h
-/Users/roliasong/Desktop/cs236/project_2/Parser.h
 
 /Users/roliasong/Desktop/cs236/project_2/Parser.h
 vector
