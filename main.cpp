@@ -24,7 +24,7 @@ int main (int argc, char** argv) {
 
     ifs.close();
 
-    (Lexer().toString(Lexer().Run(input)));
+//    (Lexer().toString(Lexer().Run(input)));
 
 
     Parser().parseRun(Lexer().Run(input));

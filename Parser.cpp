@@ -8,11 +8,14 @@
 
 void Parser::parseRun(std::vector<Token*> toParse) {
     std::cout << std::endl << "In parser" << std::endl;
-
-    std::cout << toParse.size() << std::endl;
-    for (int i = 0; i < toParse.size(); i++) {
-        std::cout << toParse.size() << std::endl;
-        std::cout << toParse[i] << std::endl;
+    std::string productionMatch = "ERROR";
+    for (int i = 0; i < toParse.size(); ++i) {
+        if (toParse[i]->getType() == "SCHEMES") {
+            std::cout << "True" << std::endl;
+        }
+        else {
+            std::cout <<"False" << std::endl;
+        }
     }
 }
 
@@ -24,3 +27,6 @@ Parser::~Parser() {
 
 }
 
+//void Parser::productionMatch(const std::string & input) {
+//
+//}

@@ -39,6 +39,7 @@ public:
     int line;
     // TODO: add other needed methods
     std::string toString() const;
+    std::string getType();
 };
 
 #endif // TOKEN_H
