@@ -26,7 +26,6 @@ int main (int argc, char** argv) {
 
 //    (Lexer().toString(Lexer().Run(input)));
 
-
     Parser().parseRun(Lexer().Run(input));
     std::cout << "Hello World!!!" << std::endl;
 
