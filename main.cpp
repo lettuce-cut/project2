@@ -11,7 +11,7 @@ int main (int argc, char** argv) {
     std::string fileName = argv[1];
     std::stringstream s;
 
-    Lexer* lexer = new Lexer();
+    auto* lexer = new Lexer();
 
     ifs.open(fileName);
     if (!ifs.is_open()) {
@@ -24,10 +24,19 @@ int main (int argc, char** argv) {
 
     ifs.close();
 
-//    (Lexer().toString(Lexer().Run(input)));
+    Lexer myLexer = Lexer();
+//    myLexer.toString(Lexer().Run(input));
 
-    Parser().parseRun(Lexer().Run(input));
-    std::cout << "Hello World!!!" << std::endl;
+    try {
+        Parser myParser = Parser();
+        myParser.parseRun(myLexer.Run(input));
+        std::cout << "Success!" << std::endl;
+    }
+    catch (std::string error) {
+        std::cout << "Failed!" << std::endl;
+        std::cout << "  " << error << std::endl;
+    }
+//    std::cout << "Hello World" << std::endl;
 
     delete lexer;
 

@@ -8,10 +8,10 @@ class Parser {
 private:
     int index = 0;
     void datalogProgramParse(std::vector<Token*> toParse);
-    void schemeListPars(std::vector<Token*> toParse);
-    void factListParse(std::vector<Token*> toParse);
-    void ruleListParse(std::vector<Token*> toParse);
-    void queryListParse(std::vector<Token*> toParse);
+    void schemeListPars(const std::vector<Token*>& toParse);
+    void factListParse(const std::vector<Token*>& toParse);
+    void ruleListParse(const std::vector<Token*>& toParse);
+    void queryListParse(const std::vector<Token*>& toParse);
     void schemeParse(std::vector<Token*> toParse);
     void factParse(std::vector<Token*> toParse);
     void ruleParse(std::vector<Token*> toParse);
@@ -28,7 +28,7 @@ public:
     Parser();
     ~Parser();
 
-    void parseRun(std::vector<Token*> toParse);
+    void parseRun(const std::vector<Token*>& toParse);
 };
 
 

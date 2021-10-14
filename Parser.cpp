@@ -6,19 +6,26 @@
 #include "Token.h"
 
 
-//void Parser::parseRun(std::vector<Token*> toParse) {
+void Parser::parseRun(const std::vector<Token*>& toParse) {
 //    std::cout << std::endl << "In parser" << std::endl;
-//    std::cout << toParse.size() << std::endl;
-//    for (int i = 0; i < toParse.size(); i++) {
-//        std::cout << toParse[i]->getType() << std::endl;
-//        parseMatch(toParse[i]->getType() )
-//
-//}
-void Parser::Match(Token *pToken, TokenType) {
-    if (TokenType() == pToken->type) {
-        throw ("Error");
-    } else {
+//    for (int i = 0; i < toParse.size(); i++){
+//        std::cout << toParse[i]->toString() << std::endl;
+//    }
+//    Match(toParse.at(index), TokenType::SCHEMES);
+//    Match(toParse.at(index), TokenType::COLON);
+    datalogProgramParse(toParse);
+}
+void Parser::Match(Token *pToken, TokenType tokenType) {
+//    std::cout << "In Match" << std::endl;
+    if (pToken->type == tokenType) {
+//        std::cout << "In Match equal" << std::endl;
         index++;
+    }
+
+    else {
+//        std::cout << "In Match else" << std::endl;
+        std::string error = pToken->toString();
+        throw error;
     }
 }
 
@@ -37,19 +44,31 @@ void Parser::datalogProgramParse(std::vector<Token*> toParse) {
     Match(toParse.at(index), TokenType::COLON);
     queryParse(toParse);
     queryListParse(toParse);
-    Match(toParse.at(index), TokenType::EOF);
+    Match(toParse.at(index), TokenType::END); //Make and END function with all the correct output
 }
-void Parser::schemeListPars(std::vector<Token*> toParse) {
-
+void Parser::schemeListPars(const std::vector<Token*>& toParse) {
+//    if (toParse.at(index)->type != TokenType::FACTS) {
+//        Match(toParse.at(index), TokenType::FACTS);
+//    }
+    if (toParse.at(index)->type == TokenType::ID) {
+        schemeParse(toParse);
+        schemeListPars(toParse);
+    }
 }
-void Parser::factListParse(std::vector<Token*> toParse) {
-
+void Parser::factListParse(const std::vector<Token*>& toParse) {
+    if (toParse.at(index)->type == TokenType::ID) {
+        factParse(toParse);
+        factListParse(toParse);
+    }
 }
-void Parser::ruleListParse(std::vector<Token*> toParse) {
-
+void Parser::ruleListParse(const std::vector<Token*>& toParse) {
+    if (toParse.at(index)->type == TokenType::ID) {
+        ruleParse(toParse);
+        ruleListParse(toParse);
+    }
 }
-void Parser::queryListParse(std::vector<Token*> toParse) {
-    if (queryParse(toParse)) {
+void Parser::queryListParse(const std::vector<Token*>& toParse) {
+    if (toParse.at(index)->type == TokenType::ID) {
         queryParse(toParse);
         queryListParse(toParse);
     }
@@ -96,12 +115,14 @@ void Parser::predicateParse(std::vector<Token*> toParse) {
 }
 void Parser::predicateListParse(std::vector<Token*> toParse) {
     if (toParse.at(index)->type == TokenType::COMMA) {
+        Match(toParse.at(index), TokenType::COMMA);
         predicateParse(toParse);
         predicateListParse(toParse);
     }
 }
 void Parser:: parameterList(std::vector<Token*> toParse) {
     if (toParse.at(index)->type == TokenType::COMMA) {
+        Match(toParse.at(index), TokenType::COMMA);
         parameterParse(toParse);
         parameterList(toParse);
     }
@@ -121,16 +142,15 @@ void Parser::idListParse(std::vector<Token*> toParse) {
     }
 }
 void Parser::parameterParse(std::vector<Token*> toParse) {
-    if (toParse.at(index)->type == TokenType::STRING) {
-        Match(toParse.at(index), TokenType::STRING);
-    }
-    else {
-        Match(toParse.at(index), TokenType::ID);
+    if (toParse.at(index)->type != TokenType::END) {
+        if (toParse.at(index)->type == TokenType::STRING) {
+            Match(toParse.at(index), TokenType::STRING);
+        } else {
+            Match(toParse.at(index), TokenType::ID);
+        }
     }
 }
 
-Parser::Parser() {
-}
+Parser::Parser() = default;
 
-Parser::~Parser() {
-}
+Parser::~Parser() = default;
