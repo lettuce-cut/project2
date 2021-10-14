@@ -1,10 +1,5 @@
-//
-// Created by Sailor Ong on 10/5/21.
-//
-
 #include "DatalogProgram.h"
 #include "Token.h"
-
 
 void DatalogProgram::parseRun(const std::vector<Token*>& toParse) {
 //    std::cout << std::endl << "In parser" << std::endl;
