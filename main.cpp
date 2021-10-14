@@ -1,5 +1,5 @@
 #include "Lexer.h"
-#include "Parser.h"
+#include "DatalogProgram.h"
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -28,12 +28,12 @@ int main (int argc, char** argv) {
 //    myLexer.toString(Lexer().Run(input));
 
     try {
-        Parser myParser = Parser();
+        DatalogProgram myParser = DatalogProgram();
         myParser.parseRun(myLexer.Run(input));
         std::cout << "Success!" << std::endl;
     }
     catch (std::string error) {
-        std::cout << "Failed!" << std::endl;
+        std::cout << "Failure!" << std::endl;
         std::cout << "  " << error << std::endl;
     }
 //    std::cout << "Hello World" << std::endl;

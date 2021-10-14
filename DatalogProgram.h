@@ -1,10 +1,10 @@
-#ifndef PROJECT_2_PARSER_H
-#define PROJECT_2_PARSER_H
+#ifndef PROJECT_2_DATALOGPROGRAM_H
+#define PROJECT_2_DATALOGPROGRAM_H
 
 #include <vector>
 #include <iostream>
 #include "Lexer.h"
-class Parser {
+class DatalogProgram {
 private:
     int index = 0;
     void datalogProgramParse(std::vector<Token*> toParse);
@@ -25,11 +25,11 @@ private:
     void parameterParse(std::vector<Token*> toParse);
     void Match(Token *pToken, TokenType);
 public:
-    Parser();
-    ~Parser();
+    DatalogProgram();
+    ~DatalogProgram();
 
     void parseRun(const std::vector<Token*>& toParse);
 };
 
 
-#endif //PROJECT_2_PARSER_H
+#endif //PROJECT_2_DATALOGPROGRAM_H

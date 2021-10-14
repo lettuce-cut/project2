@@ -113,6 +113,12 @@
 		<Unit filename="/Users/roliasong/Desktop/cs236/project_2/CommentAutomaton.h">
 			<Option target="project_2"/>
 		</Unit>
+		<Unit filename="/Users/roliasong/Desktop/cs236/project_2/DatalogProgram.cpp">
+			<Option target="project_2"/>
+		</Unit>
+		<Unit filename="/Users/roliasong/Desktop/cs236/project_2/DatalogProgram.h">
+			<Option target="project_2"/>
+		</Unit>
 		<Unit filename="/Users/roliasong/Desktop/cs236/project_2/EOFAutomaton.cpp">
 			<Option target="project_2"/>
 		</Unit>
@@ -155,16 +161,22 @@
 		<Unit filename="/Users/roliasong/Desktop/cs236/project_2/MultiplyAutomaton.h">
 			<Option target="project_2"/>
 		</Unit>
-		<Unit filename="/Users/roliasong/Desktop/cs236/project_2/Parser.cpp">
+		<Unit filename="/Users/roliasong/Desktop/cs236/project_2/Parameter.cpp">
 			<Option target="project_2"/>
 		</Unit>
-		<Unit filename="/Users/roliasong/Desktop/cs236/project_2/Parser.h">
+		<Unit filename="/Users/roliasong/Desktop/cs236/project_2/Parameter.h">
 			<Option target="project_2"/>
 		</Unit>
 		<Unit filename="/Users/roliasong/Desktop/cs236/project_2/PeriodAutomaton.cpp">
 			<Option target="project_2"/>
 		</Unit>
 		<Unit filename="/Users/roliasong/Desktop/cs236/project_2/PeriodAutomaton.h">
+			<Option target="project_2"/>
+		</Unit>
+		<Unit filename="/Users/roliasong/Desktop/cs236/project_2/Predicate.cpp">
+			<Option target="project_2"/>
+		</Unit>
+		<Unit filename="/Users/roliasong/Desktop/cs236/project_2/Predicate.h">
 			<Option target="project_2"/>
 		</Unit>
 		<Unit filename="/Users/roliasong/Desktop/cs236/project_2/QmarkAutomaton.cpp">
@@ -183,6 +195,12 @@
 			<Option target="project_2"/>
 		</Unit>
 		<Unit filename="/Users/roliasong/Desktop/cs236/project_2/RightParenAutomaton.h">
+			<Option target="project_2"/>
+		</Unit>
+		<Unit filename="/Users/roliasong/Desktop/cs236/project_2/Rule.cpp">
+			<Option target="project_2"/>
+		</Unit>
+		<Unit filename="/Users/roliasong/Desktop/cs236/project_2/Rule.h">
 			<Option target="project_2"/>
 		</Unit>
 		<Unit filename="/Users/roliasong/Desktop/cs236/project_2/RulesAutomaton.cpp">
