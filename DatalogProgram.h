@@ -30,11 +30,6 @@ public:
     ~DatalogProgram();
 
     void parseRun(const std::vector<Token*>& toParse);
-
-    Predicate pSchemes;
-    Predicate pQueries;
-    Predicate pFacts;
-    Rule pRules;
 };
 
 

@@ -40,11 +40,19 @@ Automaton.h
 Token.h
 /Users/roliasong/Desktop/cs236/project_2/Token.h
 
+/Users/roliasong/Desktop/cs236/project_2/Parameter.cpp
+Parameter.h
+/Users/roliasong/Desktop/cs236/project_2/Parameter.h
+
 /Users/roliasong/Desktop/cs236/project_2/Parameter.h
 vector
 -
 iostream
 -
+
+/Users/roliasong/Desktop/cs236/project_2/Predicate.cpp
+Predicate.h
+/Users/roliasong/Desktop/cs236/project_2/Predicate.h
 
 /Users/roliasong/Desktop/cs236/project_2/Predicate.h
 vector
@@ -55,6 +63,10 @@ Parameter.h
 /Users/roliasong/Desktop/cs236/project_2/Parameter.h
 Token.h
 /Users/roliasong/Desktop/cs236/project_2/Token.h
+
+/Users/roliasong/Desktop/cs236/project_2/Rule.cpp
+Rule.h
+/Users/roliasong/Desktop/cs236/project_2/Rule.h
 
 /Users/roliasong/Desktop/cs236/project_2/Rule.h
 vector
@@ -68,5 +80,19 @@ Predicate.h
 string
 -
 utility
+-
+
+/Users/roliasong/Desktop/cs236/project_2/main.cpp
+Lexer.h
+/Users/roliasong/Desktop/cs236/project_2/Lexer.h
+DatalogProgram.h
+/Users/roliasong/Desktop/cs236/project_2/DatalogProgram.h
+fstream
+-
+sstream
+-
+iostream
+-
+string
 -
 

@@ -10,10 +10,13 @@ private:
     Predicate* headPredicate;
     std::vector<Predicate*> bodyPredicates;
 public:
-    Rule();
     ~Rule();
-    void insertRule();
-    void toString();
+    void addBody(std::vector<Predicate *> input);
+    void ruleString(Predicate* head, std::vector<Predicate*> body);
+
+    Rule();
+
+    void setHead(Predicate input);
 };
 
 #endif //PROJECT_2_RULE_H
