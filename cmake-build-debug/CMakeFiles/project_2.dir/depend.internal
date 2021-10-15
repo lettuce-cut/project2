@@ -26,6 +26,15 @@ CMakeFiles/project_2.dir/CommentAutomaton.cpp.o
  /Users/roliasong/Desktop/cs236/project_2/CommentAutomaton.cpp
  /Users/roliasong/Desktop/cs236/project_2/CommentAutomaton.h
  /Users/roliasong/Desktop/cs236/project_2/Token.h
+CMakeFiles/project_2.dir/DatalogProgram.cpp.o
+ /Users/roliasong/Desktop/cs236/project_2/Automaton.h
+ /Users/roliasong/Desktop/cs236/project_2/DatalogProgram.cpp
+ /Users/roliasong/Desktop/cs236/project_2/DatalogProgram.h
+ /Users/roliasong/Desktop/cs236/project_2/Lexer.h
+ /Users/roliasong/Desktop/cs236/project_2/Parameter.h
+ /Users/roliasong/Desktop/cs236/project_2/Predicate.h
+ /Users/roliasong/Desktop/cs236/project_2/Rule.h
+ /Users/roliasong/Desktop/cs236/project_2/Token.h
 CMakeFiles/project_2.dir/EOFAutomaton.cpp.o
  /Users/roliasong/Desktop/cs236/project_2/Automaton.h
  /Users/roliasong/Desktop/cs236/project_2/EOFAutomaton.cpp
@@ -61,16 +70,18 @@ CMakeFiles/project_2.dir/MultiplyAutomaton.cpp.o
  /Users/roliasong/Desktop/cs236/project_2/MultiplyAutomaton.cpp
  /Users/roliasong/Desktop/cs236/project_2/MultiplyAutomaton.h
  /Users/roliasong/Desktop/cs236/project_2/Token.h
-CMakeFiles/project_2.dir/Parser.cpp.o
- /Users/roliasong/Desktop/cs236/project_2/Automaton.h
- /Users/roliasong/Desktop/cs236/project_2/Lexer.h
- /Users/roliasong/Desktop/cs236/project_2/Parser.cpp
- /Users/roliasong/Desktop/cs236/project_2/Parser.h
- /Users/roliasong/Desktop/cs236/project_2/Token.h
+CMakeFiles/project_2.dir/Parameter.cpp.o
+ /Users/roliasong/Desktop/cs236/project_2/Parameter.cpp
+ /Users/roliasong/Desktop/cs236/project_2/Parameter.h
 CMakeFiles/project_2.dir/PeriodAutomaton.cpp.o
  /Users/roliasong/Desktop/cs236/project_2/Automaton.h
  /Users/roliasong/Desktop/cs236/project_2/PeriodAutomaton.cpp
  /Users/roliasong/Desktop/cs236/project_2/PeriodAutomaton.h
+ /Users/roliasong/Desktop/cs236/project_2/Token.h
+CMakeFiles/project_2.dir/Predicate.cpp.o
+ /Users/roliasong/Desktop/cs236/project_2/Parameter.h
+ /Users/roliasong/Desktop/cs236/project_2/Predicate.cpp
+ /Users/roliasong/Desktop/cs236/project_2/Predicate.h
  /Users/roliasong/Desktop/cs236/project_2/Token.h
 CMakeFiles/project_2.dir/QmarkAutomaton.cpp.o
  /Users/roliasong/Desktop/cs236/project_2/Automaton.h
@@ -86,6 +97,12 @@ CMakeFiles/project_2.dir/RightParenAutomaton.cpp.o
  /Users/roliasong/Desktop/cs236/project_2/Automaton.h
  /Users/roliasong/Desktop/cs236/project_2/RightParenAutomaton.cpp
  /Users/roliasong/Desktop/cs236/project_2/RightParenAutomaton.h
+ /Users/roliasong/Desktop/cs236/project_2/Token.h
+CMakeFiles/project_2.dir/Rule.cpp.o
+ /Users/roliasong/Desktop/cs236/project_2/Parameter.h
+ /Users/roliasong/Desktop/cs236/project_2/Predicate.h
+ /Users/roliasong/Desktop/cs236/project_2/Rule.cpp
+ /Users/roliasong/Desktop/cs236/project_2/Rule.h
  /Users/roliasong/Desktop/cs236/project_2/Token.h
 CMakeFiles/project_2.dir/RulesAutomaton.cpp.o
  /Users/roliasong/Desktop/cs236/project_2/Automaton.h
@@ -112,7 +129,10 @@ CMakeFiles/project_2.dir/UndefinedAutomaton.cpp.o
  /Users/roliasong/Desktop/cs236/project_2/UndefinedAutomaton.h
 CMakeFiles/project_2.dir/main.cpp.o
  /Users/roliasong/Desktop/cs236/project_2/Automaton.h
+ /Users/roliasong/Desktop/cs236/project_2/DatalogProgram.h
  /Users/roliasong/Desktop/cs236/project_2/Lexer.h
- /Users/roliasong/Desktop/cs236/project_2/Parser.h
+ /Users/roliasong/Desktop/cs236/project_2/Parameter.h
+ /Users/roliasong/Desktop/cs236/project_2/Predicate.h
+ /Users/roliasong/Desktop/cs236/project_2/Rule.h
  /Users/roliasong/Desktop/cs236/project_2/Token.h
  /Users/roliasong/Desktop/cs236/project_2/main.cpp

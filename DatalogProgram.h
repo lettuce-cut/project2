@@ -4,6 +4,7 @@
 #include <vector>
 #include <iostream>
 #include "Lexer.h"
+#include "Rule.h"
 class DatalogProgram {
 private:
     int index = 0;
@@ -29,6 +30,11 @@ public:
     ~DatalogProgram();
 
     void parseRun(const std::vector<Token*>& toParse);
+
+    Predicate pSchemes;
+    Predicate pQueries;
+    Predicate pFacts;
+    Rule pRules;
 };
 
 

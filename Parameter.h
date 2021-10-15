@@ -6,9 +6,9 @@
 
 class Parameter {
 private:
-
+    std::string p;
 public:
-    Parameter();
+    Parameter(std::string input);
     ~Parameter();
     void toString();
 };

@@ -3,13 +3,16 @@
 
 #include <vector>
 #include <iostream>
+#include "Predicate.h"
 
 class Rule {
 private:
-    std::vector<> Rule;
+    Predicate* headPredicate;
+    std::vector<Predicate*> bodyPredicates;
 public:
     Rule();
     ~Rule();
+    void insertRule();
     void toString();
 };
 

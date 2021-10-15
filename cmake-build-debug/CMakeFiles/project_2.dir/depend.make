@@ -26,6 +26,15 @@ CMakeFiles/project_2.dir/CommentAutomaton.cpp.o: \
  ../CommentAutomaton.cpp \
  ../CommentAutomaton.h \
  ../Token.h
+CMakeFiles/project_2.dir/DatalogProgram.cpp.o: \
+ ../Automaton.h \
+ ../DatalogProgram.cpp \
+ ../DatalogProgram.h \
+ ../Lexer.h \
+ ../Parameter.h \
+ ../Predicate.h \
+ ../Rule.h \
+ ../Token.h
 CMakeFiles/project_2.dir/EOFAutomaton.cpp.o: \
  ../Automaton.h \
  ../EOFAutomaton.cpp \
@@ -61,16 +70,18 @@ CMakeFiles/project_2.dir/MultiplyAutomaton.cpp.o: \
  ../MultiplyAutomaton.cpp \
  ../MultiplyAutomaton.h \
  ../Token.h
-CMakeFiles/project_2.dir/Parser.cpp.o: \
- ../Automaton.h \
- ../Lexer.h \
- ../Parser.cpp \
- ../Parser.h \
- ../Token.h
+CMakeFiles/project_2.dir/Parameter.cpp.o: \
+ ../Parameter.cpp \
+ ../Parameter.h
 CMakeFiles/project_2.dir/PeriodAutomaton.cpp.o: \
  ../Automaton.h \
  ../PeriodAutomaton.cpp \
  ../PeriodAutomaton.h \
+ ../Token.h
+CMakeFiles/project_2.dir/Predicate.cpp.o: \
+ ../Parameter.h \
+ ../Predicate.cpp \
+ ../Predicate.h \
  ../Token.h
 CMakeFiles/project_2.dir/QmarkAutomaton.cpp.o: \
  ../Automaton.h \
@@ -86,6 +97,12 @@ CMakeFiles/project_2.dir/RightParenAutomaton.cpp.o: \
  ../Automaton.h \
  ../RightParenAutomaton.cpp \
  ../RightParenAutomaton.h \
+ ../Token.h
+CMakeFiles/project_2.dir/Rule.cpp.o: \
+ ../Parameter.h \
+ ../Predicate.h \
+ ../Rule.cpp \
+ ../Rule.h \
  ../Token.h
 CMakeFiles/project_2.dir/RulesAutomaton.cpp.o: \
  ../Automaton.h \
@@ -112,7 +129,10 @@ CMakeFiles/project_2.dir/UndefinedAutomaton.cpp.o: \
  ../UndefinedAutomaton.h
 CMakeFiles/project_2.dir/main.cpp.o: \
  ../Automaton.h \
+ ../DatalogProgram.h \
  ../Lexer.h \
- ../Parser.h \
+ ../Parameter.h \
+ ../Predicate.h \
+ ../Rule.h \
  ../Token.h \
  ../main.cpp

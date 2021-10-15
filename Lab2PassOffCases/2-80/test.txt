@@ -1,1 +1,11 @@
 Schemes:
+student(N, I, A, M)
+
+Facts:
+student('Roosevelt', '51', '10 Main', 'Econ').
+
+Rules:
+WhoMajor(N,M):-student(N,I,A,M).
+
+Queries:
+WhoMajor('Roosevelt',N)?WhoMajor(M,'Econ')?
