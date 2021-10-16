@@ -6,7 +6,7 @@ void Rule::addBody(std::vector<Predicate *> input) {
 
 void Rule::setHead(Predicate input) {
     headPredicate = &input;
-    std::cout << headPredicate->id << std::endl;
+//    std::cout << headPredicate->id << std::endl;
 }
 
 void Rule::ruleString(Predicate *head, const std::vector<Predicate *>& body) {

@@ -30,5 +30,7 @@ public:
     ~DatalogProgram();
     void parseRun(const std::vector<Token *> &toParse);
 
+    void outputString();
+
 };
 #endif //PROJECT_2_DATALOGPROGRAM_H

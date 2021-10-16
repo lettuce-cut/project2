@@ -15,7 +15,13 @@ public:
     Predicate();
     std::string id;
     std::vector<Parameter*> parameters;
+
+
     void addParameter(std::vector<Parameter*> input);
+    static void stringPredicate(std::vector<Predicate> input);
+
+
+
 };
 
 #endif //PROJECT_2_PREDICATE_H

@@ -31,7 +31,7 @@ int main (int argc, char** argv) {
         DatalogProgram myParser = DatalogProgram();
         myParser.parseRun(myLexer.Run(input));
         std::cout << "Success!" << std::endl;
-
+        myParser.outputString();
     }
     catch (std::string error) {
         std::cout << "Failure!" << std::endl;
