@@ -11,8 +11,13 @@ std::vector<Predicate> vectorFacts;
 Predicate pSchemes;
 Predicate pQueries;
 Predicate pFacts;
+
+std::vector<Rule> vectorRules;
 Rule rRules;
-Predicate pRulesHead;
+//Predicate pRulesHead;
+std::vector<Predicate> vectorBodyPred;
+Predicate pRules;
+
 
 
 void DatalogProgram::parseRun(const std::vector<Token*>& toParse) {
@@ -51,49 +56,29 @@ void DatalogProgram::datalogProgramParse(std::vector<Token*> toParse) {
 
 
 
-
-
-
 void DatalogProgram::schemeListPars(const std::vector<Token*>& toParse) {
-    vectorSchemes.push_back(pSchemes);
-    std::cout << "Vector size: " << vectorSchemes.size() << std::endl;
     if (toParse.at(index)->type == TokenType::ID) {
         std::cout << "in schemeList parse" << std::endl;
         schemeParse(toParse);
         schemeListPars(toParse);
-
-        pSchemes.addParameter(toPass);
-        toPass.clear();
     }
 }
 void DatalogProgram::factListParse(const std::vector<Token*>& toParse) {
     if (toParse.at(index)->type == TokenType::ID) {
         factParse(toParse);
         factListParse(toParse);
-
-        pFacts.addParameter(toPass);
-        vectorFacts.push_back(pFacts);
-        toPass.clear();
     }
 }
 void DatalogProgram::ruleListParse(const std::vector<Token*>& toParse) {
     if (toParse.at(index)->type == TokenType::ID) {
         ruleParse(toParse);
         ruleListParse(toParse);
-
-        rRules.addBody(toPassPred);
-
-        toPassPred.clear();
     }
 }
 void DatalogProgram::queryListParse(const std::vector<Token*>& toParse) {
     if (toParse.at(index)->type == TokenType::ID) {
         queryParse(toParse);
         queryListParse(toParse);
-
-        pQueries.addParameter(toPass);
-        vectorQueries.push_back(pQueries);
-        toPass.clear();
     }
 }
 void DatalogProgram::schemeParse(std::vector<Token*> toParse) {
@@ -105,6 +90,9 @@ void DatalogProgram::schemeParse(std::vector<Token*> toParse) {
     toPass.push_back(new Parameter(toParse.at(index-1)->value));//stored
     idListParse(toParse);
     Match(toParse.at(index), TokenType::RIGHT_PAREN);
+    pSchemes.addParameter(toPass);
+    vectorSchemes.push_back(pSchemes);
+    toPass.clear();
 }
 
 void DatalogProgram::factParse(std::vector<Token*> toParse) {
@@ -117,19 +105,26 @@ void DatalogProgram::factParse(std::vector<Token*> toParse) {
     stringList(toParse);
     Match(toParse.at(index), TokenType::RIGHT_PAREN);
     Match(toParse.at(index), TokenType::PERIOD);
+    pFacts.addParameter(toPass);
+    vectorFacts.push_back(pFacts);
+    toPass.clear();
 }
 
 //Work on this Function
 void DatalogProgram::ruleParse(std::vector<Token*> toParse) {
     headPredicateParse(toParse);
-    pRulesHead.addParameter(toPass);
-    Rule().setHead(pRulesHead);
-    toPass.clear();
-
     Match(toParse.at(index), TokenType::COLON_DASH);
+    pRules.id = toParse.at(index)->value;
+//    std::cout << "set Prules id" << std::endl;
     predicateParse(toParse);
     predicateListParse(toParse);
     Match(toParse.at(index), TokenType::PERIOD);
+    pRules.addParameter(toPass);
+    vectorBodyPred.push_back(pRules);
+
+    rRules.addBody(vectorBodyPred);
+    vectorRules.push_back(rRules);
+    toPass.clear();
 }
 
 
@@ -139,19 +134,26 @@ void DatalogProgram::queryParse(std::vector<Token*> toParse) {
 //    std::cout << pQueries.id << std::endl;
     predicateParse(toParse);
     Match(toParse.at(index), TokenType::QMARK);
+    pQueries.addParameter(toPass);
+    vectorQueries.push_back(pQueries);
+    toPass.clear();
 }
 
 
 //Work on this function
 void DatalogProgram::headPredicateParse(std::vector<Token*> toParse) {
     Match(toParse.at(index), TokenType::ID);
-    pRulesHead.id = toParse.at(index-1)->value;
+    pSchemes.id = toParse.at(index-1)->value;
 //    std::cout << pRulesHead.id << std::endl;
     Match(toParse.at(index), TokenType::LEFT_PAREN);
     Match(toParse.at(index), TokenType::ID);
     toPass.push_back(new Parameter(toParse.at(index-1)->value));
     idListParse(toParse);
     Match(toParse.at(index), TokenType::RIGHT_PAREN);
+    pSchemes.addParameter(toPass);
+    vectorSchemes.push_back(pSchemes);
+    rRules.setHead(pSchemes);
+    toPass.clear();
 }
 
 
@@ -196,7 +198,6 @@ void DatalogProgram::idListParse(std::vector<Token*> toParse) {
         Match(toParse.at(index), TokenType::ID);
         toPass.push_back(new Parameter(toParse.at(index-1)->value));
         idListParse(toParse);
-
     }
 }
 void DatalogProgram::parameterParse(std::vector<Token*> toParse) {
@@ -213,8 +214,15 @@ void DatalogProgram::parameterParse(std::vector<Token*> toParse) {
 }
 
 void DatalogProgram::outputString(){
-    std::cout << "In output string" << std::endl;
+    std::cout << "Schemes(" << vectorSchemes.size() << "):" << std::endl;
     Predicate::stringPredicate(vectorSchemes);
+    std::cout << "Facts(" << vectorFacts.size() << "):" << std::endl;
+    Predicate::stringPredicate(vectorFacts);
+    std::cout << "Rules(" << vectorRules.size() << "):" << std::endl;
+    Rule::ruleString(vectorRules);
+    std::cout << "Queries(" << vectorQueries.size() << "):" << std::endl;
+    Predicate::stringPredicate(vectorQueries);
+
 }
 
 DatalogProgram::DatalogProgram() = default;

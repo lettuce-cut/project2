@@ -7,12 +7,12 @@
 
 class Rule {
 private:
-    Predicate* headPredicate;
-    std::vector<Predicate*> bodyPredicates;
+    Predicate headPredicate;
+    std::vector<Predicate> bodyPredicates;
 public:
     ~Rule();
-    void addBody(std::vector<Predicate *> input);
-    static void ruleString(Predicate* head, const std::vector<Predicate*>& body);
+    void addBody(std::vector<Predicate> input);
+    static void ruleString(std::vector<Rule> input);
 
     Rule();
 
