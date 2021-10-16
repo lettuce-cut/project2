@@ -12,7 +12,7 @@ private:
 public:
     ~Rule();
     void addBody(std::vector<Predicate *> input);
-    void ruleString(Predicate* head, std::vector<Predicate*> body);
+    static void ruleString(Predicate* head, const std::vector<Predicate*>& body);
 
     Rule();
 

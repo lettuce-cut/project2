@@ -10,7 +10,7 @@ private:
 public:
     Parameter(std::string input);
     ~Parameter();
-    void paramString(Parameter input);
+    static void paramString(const Parameter& input);
 };
 
 #endif //PROJECT_2_PARAMETER_H
