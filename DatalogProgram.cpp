@@ -58,7 +58,6 @@ void DatalogProgram::datalogProgramParse(std::vector<Token*> toParse) {
 
 void DatalogProgram::schemeListPars(const std::vector<Token*>& toParse) {
     if (toParse.at(index)->type == TokenType::ID) {
-        std::cout << "in schemeList parse" << std::endl;
         schemeParse(toParse);
         schemeListPars(toParse);
     }
@@ -106,6 +105,7 @@ void DatalogProgram::factParse(std::vector<Token*> toParse) {
     Match(toParse.at(index), TokenType::RIGHT_PAREN);
     Match(toParse.at(index), TokenType::PERIOD);
     pFacts.addParameter(toPass);
+    setDomain(toPass);
     vectorFacts.push_back(pFacts);
     toPass.clear();
 }
@@ -222,7 +222,21 @@ void DatalogProgram::outputString(){
     Rule::ruleString(vectorRules);
     std::cout << "Queries(" << vectorQueries.size() << "):" << std::endl;
     Predicate::stringPredicate(vectorQueries);
+    std::cout << "Domain(" << domainSet.size() << "):" << std::endl;
+    domainString();
 
+}
+
+void DatalogProgram::setDomain(std::vector<Parameter*> input) {
+    for (int i = 0; i < input.size(); i++) {
+        domainSet.insert(input.at(i)->paramString());
+    }
+}
+
+void DatalogProgram::domainString() {
+    for (auto elem : domainSet) {
+        std::cout << "  " << elem << std::endl;
+    }
 }
 
 DatalogProgram::DatalogProgram() = default;

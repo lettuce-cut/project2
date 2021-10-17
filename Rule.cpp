@@ -32,8 +32,9 @@ void Rule::ruleString(std::vector<Rule> input) {
                 }
             }
         }
+        std::cout << std::endl;
     }
-    std::cout << std::endl;
+//    std::cout << std::endl;
 }
 
 

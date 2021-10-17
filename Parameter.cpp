@@ -8,3 +8,7 @@ Parameter::Parameter(std::string input) {
 std::string Parameter::paramString() {
     return p;
 }
+
+Parameter::~Parameter() {
+
+}

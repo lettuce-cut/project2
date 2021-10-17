@@ -5,6 +5,7 @@
 #include <iostream>
 #include "Lexer.h"
 #include "Rule.h"
+#include <set>
 class DatalogProgram {
 private:
     int index = 0;
@@ -31,6 +32,9 @@ public:
     void parseRun(const std::vector<Token *> &toParse);
 
     void outputString();
+    void setDomain(std::vector<Parameter *> input);
+    void domainString();
+    std::set<std::string> domainSet;
 
 };
 #endif //PROJECT_2_DATALOGPROGRAM_H

@@ -1,11 +1,18 @@
+
 Schemes:
-student(N, I, A, M)
+snap(S,N,A,P)
 
 Facts:
-student('Roosevelt', '51', '10 Main', 'Econ').
+snap('12345','C. Brown','12 Apple St.','555-1234').
 
 Rules:
-WhoMajor(N,M):-student(N,I,A,M).
+before(C1,C2):-cp(C2,C1).
+before(C1,C2):-cp(C3,C1),before(C3,C2).
+tthCourses(C):-cdh(C,'Tu',H).
+tthCourses(C):-cdh(C,'Th',H).
+Schedule(N,C,R,D,H):-snap(S,N,A,P),csg(C,S,G),cr(C,R),cdh(C,D,H).
+Grades(N,C,G):-snap(S,N,A,P),csg(C,S,'A').
+Students(C,R,N,G):-snap(S,N,A,P),old('12345',S).
 
 Queries:
-WhoMajor('Roosevelt',N)?WhoMajor(M,'Econ')?
+snap(Id,'Snoopy',A,P)?
