@@ -2,7 +2,7 @@
 #include "Token.h"
 #include "Predicate.h"
 std::vector<Parameter*> toPass;
-std::vector<Predicate*> toPassPred;
+std::vector<Predicate> toPassPred;
 std::vector<Predicate> vectorSchemes;
 std::vector<Predicate> vectorQueries;
 std::vector<Predicate> vectorFacts;
@@ -114,7 +114,6 @@ void DatalogProgram::ruleParse(std::vector<Token*> toParse) {
     headPredicateParse(toParse);
     Match(toParse.at(index), TokenType::COLON_DASH);
     pRules.id = toParse.at(index)->value;
-//    std::cout << "set Prules id" << std::endl;
     predicateParse(toParse);
     predicateListParse(toParse);
     Match(toParse.at(index), TokenType::PERIOD);
@@ -171,7 +170,6 @@ void DatalogProgram::predicateListParse(std::vector<Token*> toParse) {
         Match(toParse.at(index), TokenType::COMMA);
         predicateParse(toParse);
         predicateListParse(toParse);
-        toPassPred.push_back(new Predicate(toParse.at(index)));
     }
 }
 
