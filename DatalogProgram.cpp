@@ -215,13 +215,13 @@ void DatalogProgram::parameterParse(std::vector<Token*> toParse) {
 
 void DatalogProgram::outputString(){
     std::cout << "Schemes(" << vectorSchemes.size() << "):" << std::endl;
-    Predicate::stringPredicate(vectorSchemes);
+    Predicate::stringPredicate(vectorSchemes, "Schemes");
     std::cout << "Facts(" << vectorFacts.size() << "):" << std::endl;
-    Predicate::stringPredicate(vectorFacts);
+    Predicate::stringPredicate(vectorFacts, "Facts");
     std::cout << "Rules(" << vectorRules.size() << "):" << std::endl;
     Rule::ruleString(vectorRules);
     std::cout << "Queries(" << vectorQueries.size() << "):" << std::endl;
-    Predicate::stringPredicate(vectorQueries);
+    Predicate::stringPredicate(vectorQueries, "Queries");
     std::cout << "Domain(" << domainSet.size() << "):" << std::endl;
     domainString();
 

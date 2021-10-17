@@ -18,7 +18,7 @@ public:
 
 
     void addParameter(std::vector<Parameter*> input);
-    static void stringPredicate(std::vector<Predicate> input);
+    static void stringPredicate(std::vector<Predicate> input, std::string punct);
 
 
 
