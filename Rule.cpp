@@ -31,7 +31,7 @@ void Rule::ruleString(std::vector<Rule> input) {
             std::cout << bodyPredicate.id << "(";
             for (long unsigned int h = 0; h < bodyPredicate.parameters.size(); h++) {
                 if (h == bodyPredicate.parameters.size()-1){
-                    std::cout << bodyPredicate.parameters.at(h)->paramString() << "),";
+                    std::cout << bodyPredicate.parameters.at(h)->paramString() << ").";
                 }
                 else {
                     std::cout << bodyPredicate.parameters.at(h)->paramString() << ",";
