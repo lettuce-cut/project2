@@ -125,6 +125,7 @@ void DatalogProgram::ruleParse(std::vector<Token*> toParse) {
     rRules.addBody(vectorBodyPred);
     vectorRules.push_back(rRules);
     toPass.clear();
+    vectorBodyPred.clear();
 }
 
 
