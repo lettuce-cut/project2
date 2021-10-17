@@ -6,6 +6,7 @@ Predicate::Predicate(Token *input) {
 
 void Predicate::addParameter(std::vector<Parameter*> input) {
     parameters = input;
+
 }
 
 void Predicate::stringPredicate(std::vector<Predicate> input, std::string punct) {

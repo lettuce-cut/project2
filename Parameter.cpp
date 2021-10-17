@@ -2,7 +2,7 @@
 
 Parameter::Parameter(std::string input) {
     p = input;
-//    std::cout<< p << std::endl;
+//    std::cout<< "Parameter added: " << p << std::endl;
 }
 
 std::string Parameter::paramString() {

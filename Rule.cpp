@@ -2,6 +2,12 @@
 
 void Rule::addBody(std::vector<Predicate> input) {
     bodyPredicates = input;
+//    for (int i = 0; i < bodyPredicates.size(); i++) {
+//        std::cout << "id: " << bodyPredicates.at(i).id << std::endl;
+//        for (int j = 0; j < bodyPredicates.at(i).parameters.size(); j++) {
+//            std::cout << bodyPredicates.at(i).parameters.at(j)->paramString() << std::endl;
+//        }
+//    }
 }
 
 void Rule::setHead(const Predicate& input) {
@@ -25,7 +31,7 @@ void Rule::ruleString(std::vector<Rule> input) {
             std::cout << bodyPredicate.id << "(";
             for (long unsigned int h = 0; h < bodyPredicate.parameters.size(); h++) {
                 if (h == bodyPredicate.parameters.size()-1){
-                    std::cout << bodyPredicate.parameters.at(h)->paramString() << ").";
+                    std::cout << bodyPredicate.parameters.at(h)->paramString() << "),";
                 }
                 else {
                     std::cout << bodyPredicate.parameters.at(h)->paramString() << ",";
