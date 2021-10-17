@@ -16,7 +16,7 @@ public:
 
     Rule();
 
-    void setHead(Predicate input);
+    void setHead(const Predicate& input);
 };
 
 #endif //PROJECT_2_RULE_H

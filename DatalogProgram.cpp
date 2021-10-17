@@ -228,13 +228,13 @@ void DatalogProgram::outputString(){
 }
 
 void DatalogProgram::setDomain(std::vector<Parameter*> input) {
-    for (int i = 0; i < input.size(); i++) {
-        domainSet.insert(input.at(i)->paramString());
+    for (auto & i : input) {
+        domainSet.insert(i->paramString());
     }
 }
 
 void DatalogProgram::domainString() {
-    for (auto elem : domainSet) {
+    for (const auto& elem : domainSet) {
         std::cout << "  " << elem << std::endl;
     }
 }

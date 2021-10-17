@@ -9,14 +9,14 @@ void Predicate::addParameter(std::vector<Parameter*> input) {
 }
 
 void Predicate::stringPredicate(std::vector<Predicate> input) {
-    for (int i = 0; i < input.size(); i++) {
-        std::cout << "  " << input.at(i).id << "(";
-        for (int j = 0; j < input.at(i).parameters.size(); j++) {
-            if (j == input.at(i).parameters.size() - 1) {
-                std::cout << input.at(i).parameters.at(j)->paramString() << ")";
+    for (auto & i : input) {
+        std::cout << "  " << i.id << "(";
+        for (int j = 0; j < i.parameters.size(); j++) {
+            if (j == i.parameters.size() - 1) {
+                std::cout << i.parameters.at(j)->paramString() << ")";
             }
             else {
-                std::cout << input.at(i).parameters.at(j)->paramString() << ",";
+                std::cout << i.parameters.at(j)->paramString() << ",";
             }
         }
         std::cout << std::endl;

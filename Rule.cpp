@@ -4,31 +4,31 @@ void Rule::addBody(std::vector<Predicate> input) {
     bodyPredicates = input;
 }
 
-void Rule::setHead(Predicate input) {
+void Rule::setHead(const Predicate& input) {
     headPredicate.id = input.id;
     headPredicate.parameters = input.parameters;
 }
 
 void Rule::ruleString(std::vector<Rule> input) {
-    for (int i = 0; i < input.size(); i++) {
-        std::cout << "  " << input.at(i).headPredicate.id << "(";
-        for (int j = 0; j < input.at(i).headPredicate.parameters.size(); j++) {
-            if (j == input.at(i).headPredicate.parameters.size()-1) {
-                std::cout << input.at(i).headPredicate.parameters.at(j)->paramString() << ")";
+    for (auto & i : input) {
+        std::cout << "  " << i.headPredicate.id << "(";
+        for (int j = 0; j < i.headPredicate.parameters.size(); j++) {
+            if (j == i.headPredicate.parameters.size()-1) {
+                std::cout << i.headPredicate.parameters.at(j)->paramString() << ")";
             }
             else {
-                std::cout << input.at(i).headPredicate.parameters.at(j)->paramString() << ",";
+                std::cout << i.headPredicate.parameters.at(j)->paramString() << ",";
             }
         }
         std::cout << " :- ";
-        for (int k = 0; k < input.at(i).bodyPredicates.size(); k++) {
-            std::cout << input.at(i).bodyPredicates.at(k).id << "(";
-            for (int h = 0; h < input.at(i).bodyPredicates.at(k).parameters.size(); h++) {
-                if (h == input.at(i).bodyPredicates.at(k).parameters.size()-1){
-                    std::cout << input.at(i).bodyPredicates.at(k).parameters.at(h)->paramString() << ")";
+        for (auto & bodyPredicate : i.bodyPredicates) {
+            std::cout << bodyPredicate.id << "(";
+            for (int h = 0; h < bodyPredicate.parameters.size(); h++) {
+                if (h == bodyPredicate.parameters.size()-1){
+                    std::cout << bodyPredicate.parameters.at(h)->paramString() << ")";
                 }
                 else {
-                    std::cout << input.at(i).bodyPredicates.at(k).parameters.at(h)->paramString() << ",";
+                    std::cout << bodyPredicate.parameters.at(h)->paramString() << ",";
                 }
             }
         }
