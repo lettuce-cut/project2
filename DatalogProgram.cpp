@@ -1,7 +1,6 @@
 #include "DatalogProgram.h"
 #include "Token.h"
 #include "Predicate.h"
-
 std::vector<Parameter*> toPass;
 std::vector<Predicate*> toPassPred;
 std::vector<Predicate> vectorSchemes;
@@ -152,7 +151,6 @@ void DatalogProgram::headPredicateParse(std::vector<Token*> toParse) {
     idListParse(toParse);
     Match(toParse.at(index), TokenType::RIGHT_PAREN);
     pSchemes.addParameter(toPass);
-    vectorSchemes.push_back(pSchemes);
     rRules.setHead(pSchemes);
     toPass.clear();
 }
