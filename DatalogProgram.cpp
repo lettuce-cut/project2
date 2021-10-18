@@ -148,7 +148,7 @@ void DatalogProgram::headPredicateParse(std::vector<Token*> toParse) {
     pSchemes.addParameter(toPass);
 
     for (long unsigned int i = 0; i < vectorSchemes.size(); i++) {
-        int count = 0;
+        long unsigned int count = 0;
         if (pSchemes.id != vectorSchemes.at(i).id) {
             count ++;
             if (count == vectorSchemes.size()) {
