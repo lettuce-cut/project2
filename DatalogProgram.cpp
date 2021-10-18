@@ -146,6 +146,16 @@ void DatalogProgram::headPredicateParse(std::vector<Token*> toParse) {
     idListParse(toParse);
     Match(toParse.at(index), TokenType::RIGHT_PAREN);
     pSchemes.addParameter(toPass);
+
+    for (int i = 0; i < vectorSchemes.size(); i++) {
+        int count = 0;
+        if (pSchemes.id != vectorSchemes.at(i).id) {
+            count ++;
+            if (count == vectorSchemes.size()) {
+                vectorSchemes.push_back(pSchemes);
+            }
+        }
+    }
     rRules.setHead(pSchemes);
     toPass.clear();
 }
