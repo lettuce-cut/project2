@@ -31,6 +31,10 @@ void Predicate::stringPredicate(std::vector<Predicate> input, std::string punct)
 //    std::cout << std::endl;
 }
 
+Predicate::Predicate(Predicate *pPredicate) {
+    id = pPredicate->id;
+}
+
 Predicate::~Predicate() = default;
 Predicate::Predicate() = default;
 

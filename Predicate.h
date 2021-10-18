@@ -11,6 +11,8 @@ public:
     Predicate(Token *input);
     Predicate(std::string name) { this->id = name; }
 
+    Predicate(Predicate *pPredicate);
+
     ~Predicate();
     Predicate();
     std::string id;

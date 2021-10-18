@@ -30,10 +30,9 @@ void Rule::ruleString(std::vector<Rule> input) {
         for (long unsigned int k = 0; k < input.at(i).bodyPredicates.size(); k++) {
             std::cout << input.at(i).bodyPredicates.at(k).id << "(";
             for (long unsigned int h = 0; h < input.at(i).bodyPredicates.at(k).parameters.size(); h++) {
-                if (h == input.at(i).bodyPredicates.at(k).parameters.size()-1){
+                if (h == input.at(i).bodyPredicates.at(k).parameters.size() - 1) {
                     std::cout << input.at(i).bodyPredicates.at(k).parameters.at(h)->paramString() << ").";
-                }
-                else {
+                } else {
                     std::cout << input.at(i).bodyPredicates.at(k).parameters.at(h)->paramString() << ",";
                 }
             }

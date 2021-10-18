@@ -113,17 +113,20 @@ void DatalogProgram::factParse(std::vector<Token*> toParse) {
 void DatalogProgram::ruleParse(std::vector<Token*> toParse) {
     headPredicateParse(toParse);
     Match(toParse.at(index), TokenType::COLON_DASH);
-    pRules.id = toParse.at(index)->value;
-    predicateParse(toParse);
+    predicateParseRules(toParse);
     predicateListParse(toParse);
-    Match(toParse.at(index), TokenType::PERIOD);
-    pRules.addParameter(toPass);
-    vectorBodyPred.push_back(pRules);
+    Match(toParse.at(index),TokenType::PERIOD);
+
+//    vectorBodyPred.push_back(pRules);
+//
+//    rRules.addBody(vectorBodyPred);
+//    vectorRules.push_back(rRules);
+//    toPass.clear();
+//    vectorBodyPred.clear();
 
     rRules.addBody(vectorBodyPred);
-    vectorRules.push_back(rRules);
-    toPass.clear();
     vectorBodyPred.clear();
+    vectorRules.push_back(rRules);
 }
 
 
@@ -163,12 +166,23 @@ void DatalogProgram::predicateParse(std::vector<Token*> toParse) {
     Match(toParse.at(index), TokenType::RIGHT_PAREN);
 }
 
+void DatalogProgram::predicateParseRules(std::vector<Token*> toParse) {
+    vectorBodyPred.push_back(new Predicate(toParse.at(index)->value));
+    Match(toParse.at(index), TokenType::ID);
+    Match(toParse.at(index), TokenType::LEFT_PAREN);
+    parameterParse(toParse);
+    parameterList(toParse);
+    pRules.addParameter(toPass);
+    Match(toParse.at(index), TokenType::RIGHT_PAREN);
+    toPass.clear();
+    vectorBodyPred.push_back(pRules);
+}
 
 //Work on this function
 void DatalogProgram::predicateListParse(std::vector<Token*> toParse) {
     if (toParse.at(index)->type == TokenType::COMMA) {
         Match(toParse.at(index), TokenType::COMMA);
-        predicateParse(toParse);
+        predicateParseRules(toParse);
         predicateListParse(toParse);
     }
 }
