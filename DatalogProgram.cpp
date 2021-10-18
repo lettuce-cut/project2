@@ -117,13 +117,6 @@ void DatalogProgram::ruleParse(std::vector<Token*> toParse) {
     predicateListParse(toParse);
     Match(toParse.at(index),TokenType::PERIOD);
 
-//    vectorBodyPred.push_back(pRules);
-//
-//    rRules.addBody(vectorBodyPred);
-//    vectorRules.push_back(rRules);
-//    toPass.clear();
-//    vectorBodyPred.clear();
-
     rRules.addBody(vectorBodyPred);
     vectorBodyPred.clear();
     vectorRules.push_back(rRules);
@@ -167,7 +160,7 @@ void DatalogProgram::predicateParse(std::vector<Token*> toParse) {
 }
 
 void DatalogProgram::predicateParseRules(std::vector<Token*> toParse) {
-    vectorBodyPred.push_back(new Predicate(toParse.at(index)->value));
+    pRules.id = toParse.at(index)->value;
     Match(toParse.at(index), TokenType::ID);
     Match(toParse.at(index), TokenType::LEFT_PAREN);
     parameterParse(toParse);
